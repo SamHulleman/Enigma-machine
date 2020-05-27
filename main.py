@@ -33,3 +33,5 @@ input = StandRotorA
 input = StandRotorB
 input = StandRotorC
 hallo ik ben natas
+
+en ik ben Sam
