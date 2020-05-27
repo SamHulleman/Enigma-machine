@@ -27,10 +27,9 @@ def NieuweLetter (LetterBoodschap, StandRotorA, StandRotorB, StandRotorC)
   for StandRotorB(alphabet.index) in StandRotorC
   return StandRotorC(alphabet.index)
 print NieuweLetter(int())
- 
+
 input = LetterBoodschap
 input = StandRotorA
 input = StandRotorB
 input = StandRotorC
-  
-   
+hallo ik ben natas
