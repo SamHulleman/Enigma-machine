@@ -1,40 +1,44 @@
 # maak hier de hele enigma machine in python :D
 
-# beginnen met het progammeren van de rotors
-import random
-alfabet="abcdefghijklmnopqrstuvwxyz"
-for i in range(1):
-    letters=''.join(random.sample(alfabet,len(alfabet)))
-    print (letters)
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+# functie rotor
+def draaiRotor(rotor,aantaldraaien): 
+  rotorEind = rotor[26 - aantaldraaien:26]
+  rotorBegin = rotor[0:26 - aantaldraaien]
+  return rotorEind + rotorBegin 
+  
+# beginstand rotoren
+rotorA = draaiRotor(alphabet, 0)
+print (rotorA)
 
-import alphabet
+# rotorB = draaiRotor(alphabet, 2)
+# print (rotorB)
 
-alphabet = "abcdefghijklmnopqrstuwvxyz"
-StandRotorA = alphabet with alphabet.index
-StandRotorB = alphabet with alphabet.index
-StandRotorC = alphabet with alphabet.index
-LetterBoodschap = alphabet.index()
+# rotorC = draaiRotor(alphabet, 3)
+# print (rotorC)
 
-def NieuweLetter (LetterBoodschap, StandRotorA, StandRotorB, StandRotorC)
-  for LetterBoodschap
-      if StandRotorA == 25
-        return StandRotorB + 1
-      if StandRotorB == 25
-        return StandRotorC + 1 
-  return StandRotorA + 1
+# draaien rotoren 
+rotorA = draaiRotor(rotorA, 1)
+print(rotorA)
 
-  for LetterBoodschap in StandRotorA
-  return StandRotorA(alphabet.index)
+# woord vervangen/husselen/door rotor A heen
+nieuwwoord = ""
+for letter in "aap":
+  rotorA = draaiRotor(rotorA, 1)
 
-  for StandRotorA(alphabet.index) in StandRotorB
-  return StandRotorB(alphabet.index)
+  if not letter in alphabet: 
+    nieuwwoord += letter 
+    continue
 
-  for StandRotorB(alphabet.index) in StandRotorC
-  return StandRotorC(alphabet.index)
-print NieuweLetter(int())
+  positie = alphabet.index(letter)
+  nieuwLetter = rotorA[positie]
+  
+ # positie = alphabet.index(letter)
+ # nieuwLetter = rotorB[positie]
+  
+  # positie = alphabet.index(letter)
+  # nieuwLetter = rotorC[positie]
+  
+  nieuwwoord += nieuwLetter
 
-LetterBoodschap = input()
-StandRotorA = input()
-StandRotorB = input()
-StandRotorC = input()
-
+print(nieuwwoord)
