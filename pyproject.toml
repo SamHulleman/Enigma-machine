@@ -10,5 +10,5 @@ name = "enigma-machine"
 version = "0.1.0"
 [tool.poetry.dependencies]
 alphabet = "^0.0.7"
-python = "^3.7"
+python = "^3.8"
 [tool.poetry.dev-dependencies]

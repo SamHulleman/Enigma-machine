@@ -17,7 +17,7 @@ description = "Python package for providing Mozilla's CA Bundle."
 name = "certifi"
 optional = false
 python-versions = "*"
-version = "2020.4.5.1"
+version = "2020.4.5.2"
 
 [[package]]
 category = "main"
@@ -85,12 +85,12 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4"
 version = "1.25.9"
 
 [metadata]
-content-hash = "d036d6bf58b785d0f309d25c8c22073e799006c05a7e146c0bd9e965dc370655"
-python-versions = "^3.7"
+content-hash = "9301d50e5120a52794bd2e0fa9dfc741881fe2b4032421c1233228f93242dba2"
+python-versions = "^3.8"
 
 [metadata.hashes]
 alphabet = ["67fc1132cf1115f40bd74ceae7b32bfd8d2fbbd9d97f2473759125a22684d0d4"]
-certifi = ["1d987a998c75633c40847cc966fcf5904906c920a7f17ef374f5aa4282abd304", "51fcb31174be6e6664c5f69e3e1691a2d72a1a12e90f872cbdb1567eb47b6519"]
+certifi = ["5ad7e9a056d25ffa5082862e36f119f7f7cec6457fa07ee2f8c339814b80c9b1", "9cd41137dc19af6a5e03b630eefe7d1f458d964d406342dd3edf625839b944cc"]
 chardet = ["84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae", "fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"]
 filemagic = ["e684359ef40820fe406f0ebc5bf8a78f89717bdb7fed688af68082d991d6dbf3"]
 googletrans = ["bb4e2a6ee72a24870e696a14238b7305f855a05206ecae10bd50052651984cc5"]

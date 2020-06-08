@@ -8,22 +8,44 @@ def draaiRotor(rotor,aantaldraaien):
   return rotorEind + rotorBegin 
   
 # beginstand rotoren
-rotorA = draaiRotor(alphabet, 0)
-print (rotorA)
+def StandenRotoren():
+  for x in range(3):
+    print("Stand van rotor {}:".format(x+1))
 
-# rotorB = draaiRotor(alphabet, 2)
-# print (rotorB)
+#rotorA = draaiRotor(alphabet, 26)
+#print (rotorA)
 
-# rotorC = draaiRotor(alphabet, 3)
-# print (rotorC)
+#rotorB = draaiRotor(alphabet, 2)
+#print (rotorB)
 
-# draaien rotoren 
-rotorA = draaiRotor(rotorA, 1)
-print(rotorA)
+#rotorC = draaiRotor(alphabet, 3)
+#print (rotorC)
 
-# woord vervangen/husselen/door rotor A heen
+# woord vervangen/husselen/door rotors heen
+def WoordDoorRotoren(InvoerLetter):
+  if alfabet.find(InvoerLetter)= -1:
+    return Invoerletter
+#door de rotoren heen
+  for rotorA
+    InvoerLetter = alfabet.index(Invoerletter)
+  for rotorB
+    InvoerLetter = alfabet.index(Invoerletter)
+  for rotorC
+    InvoerLetter = alfabet.index(Invoerletter)
+#alfabet andersom
+InvoerLetter = alfabet[::-1][alfabet.index(InvoerLetter)]
+
+#andersom door de rotoren
+InvoerLetter = rotorC.index(Invoerletter)
+InvoerLetter = rotorB.index(Invoerletter)
+InvoerLetter = rotorA.index(Invoerletter)
+
+
+aantaldraaien = 0 
 nieuwwoord = ""
+nieuwwoord.lower()
 for letter in "aap":
+  aantaldraaien += 1
   rotorA = draaiRotor(rotorA, 1)
 
   if not letter in alphabet: 
@@ -32,7 +54,13 @@ for letter in "aap":
 
   positie = alphabet.index(letter)
   nieuwLetter = rotorA[positie]
-  
+
+# als A 26 heeft gedraaid draait B
+  if aantaldraaien % 26 == 0:
+    rotorA = 0
+    rotorB = draaiRotor(rotorB, 1)
+    rotorB += 1
+    
  # positie = alphabet.index(letter)
  # nieuwLetter = rotorB[positie]
   
