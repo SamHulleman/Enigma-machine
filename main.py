@@ -1,72 +1,32 @@
 # maak hier de hele enigma machine in python :D
 
 alphabet = "abcdefghijklmnopqrstuvwxyz"
-# functie rotor
-def draaiRotor(rotor,aantaldraaien): 
-  rotorEind = rotor[26 - aantaldraaien:26]
-  rotorBegin = rotor[0:26 - aantaldraaien]
-  return rotorEind + rotorBegin 
-  
-# beginstand rotoren
-def StandenRotoren():
-  for x in range(3):
-    print("Stand van rotor {}:".format(x+1))
 
-#rotorA = draaiRotor(alphabet, 26)
-#print (rotorA)
+  # schuif letters op voor het gegeven aantal (encrypten)
+  def schuiven(self, aantal_verschuivingen):    
+    aantal_verschuivingen = aantal_verschuivingen % 26 
+    verschuifd_alfabet = list(alfabet)
+    for i in range(aantal_verschuivingen):
+      verschuifd_alfabet.insert(0, verschuifd_alfabet[-1])
+      verschuifd_alfabet.pop(-1)
+    return verschuifd_alfabet
 
-#rotorB = draaiRotor(alphabet, 2)
-#print (rotorB)
+  # schuif de letters terug voor het gegeven aantal (decrypten)
+  def schuiven_omkeren(self, aantal_verschuivingen):
+    verschuifd_alfabet = list(alfabet)
+    for i in range(aantal_verschuivingen):
+        verschuifd_alfabet.append(verschuifd_alfabet[0])
+        verschuifd_alfabet.pop(0)
+    return verschuifd_alfabet
 
-#rotorC = draaiRotor(alphabet, 3)
-#print (rotorC)
+   #zet de letters naar voren (veranderd positie van het aangegeven letter)
+  def volgende_letter(self, rotor, char) :
+    verschuifd_alfabet = self.schuiven(rotor)
+    letterIndex = alfabet.index(char)
+    return verschuifd_alfabet[letterIndex] 
 
-# woord vervangen/husselen/door rotors heen
-def WoordDoorRotoren(InvoerLetter):
-  if alfabet.find(InvoerLetter)= -1:
-    return Invoerletter
-#door de rotoren heen
-  for rotorA
-    InvoerLetter = alfabet.index(Invoerletter)
-  for rotorB
-    InvoerLetter = alfabet.index(Invoerletter)
-  for rotorC
-    InvoerLetter = alfabet.index(Invoerletter)
-#alfabet andersom
-InvoerLetter = alfabet[::-1][alfabet.index(InvoerLetter)]
-
-#andersom door de rotoren
-InvoerLetter = rotorC.index(Invoerletter)
-InvoerLetter = rotorB.index(Invoerletter)
-InvoerLetter = rotorA.index(Invoerletter)
-
-
-aantaldraaien = 0 
-nieuwwoord = ""
-nieuwwoord.lower()
-for letter in "aap":
-  aantaldraaien += 1
-  rotorA = draaiRotor(rotorA, 1)
-
-  if not letter in alphabet: 
-    nieuwwoord += letter 
-    continue
-
-  positie = alphabet.index(letter)
-  nieuwLetter = rotorA[positie]
-
-# als A 26 heeft gedraaid draait B
-  if aantaldraaien % 26 == 0:
-    rotorA = 0
-    rotorB = draaiRotor(rotorB, 1)
-    rotorB += 1
-    
- # positie = alphabet.index(letter)
- # nieuwLetter = rotorB[positie]
-  
-  # positie = alphabet.index(letter)
-  # nieuwLetter = rotorC[positie]
-  
-  nieuwwoord += nieuwLetter
-
-print(nieuwwoord)
+  #precies het zelfde als de functie hierboven maar dan andersom
+  def vorige_letter(self, rotor, char) :
+    verschuifd_alfabet = self.schuiven_omkeren(rotor)
+    letterIndex = alfabet.index(char)
+    return verschuifd_alfabet[letterIndex] 
