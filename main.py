@@ -2,6 +2,17 @@
 
 alphabet = "abcdefghijklmnopqrstuvwxyz"
 
+class Enigma:
+  a = 0
+  b = 0
+  c = 0
+  
+ # maak de class variabelen aan voor aanroepen
+  def __init__(self, a,b,c) :
+    self.a = a
+    self.b = b
+    self.c = c
+
   # schuif letters op voor het gegeven aantal (encrypten)
   def schuiven(self, aantal_verschuivingen):    
     aantal_verschuivingen = aantal_verschuivingen % 26 
