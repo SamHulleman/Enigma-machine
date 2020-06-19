@@ -7,7 +7,7 @@ class Enigma:
   b = 0
   c = 0
   
- # maak de class variabelen aan voor aanroepen
+ # maakt de classvariabelen aan voor aanroepen
   def __init__(self, a,b,c) :
     self.a = a
     self.b = b
@@ -30,19 +30,19 @@ class Enigma:
         verschuifd_alfabet.pop(0)
     return verschuifd_alfabet
 
-   #zet de letters naar voren (veranderd positie van het aangegeven letter)
+   # zet de letters naar voor en verandert de positie van de aangegeven letter (encrypten)
   def volgende_letter(self, rotor, char) :
     verschuifd_alfabet = self.schuiven(rotor)
     letterIndex = alfabet.index(char)
     return verschuifd_alfabet[letterIndex] 
 
-  #precies het zelfde als de functie hierboven maar dan andersom
+  # zet de letters naar achter en verandert de positie van de aangegeven letter (decrypten)
   def vorige_letter(self, rotor, char) :
     verschuifd_alfabet = self.schuiven_omkeren(rotor)
     letterIndex = alfabet.index(char)
     return verschuifd_alfabet[letterIndex]
      
-# rotors b en c gaan draaien op het juiste moment
+  # rotors b en c gaan draaien op het juiste moment
   def rotors_draaien(self, positie) :
     self.a = self.a + 1
 
@@ -52,7 +52,7 @@ class Enigma:
     if(positie % (26*26)==0):     
       self.c = self.c + 1
 
-      #instellingen voor de in te voeren tekst
+  # de instellingen voor de in te voeren tekst
   def versleutelen(self, tekst) :
     tekst = tekst.lower()      
     nieuwe_tekst = []
@@ -64,17 +64,17 @@ class Enigma:
         nieuwe_tekst.append(char)
         continue
         
-         #door de rotoren heen
+  # door de rotoren heen
       nieuwe_letter = self.volgende_letter(self.a, char)
 
       nieuwe_letter = self.volgende_letter(self.b, nieuwe_letter)  
 
       nieuwe_letter = self.volgende_letter(self.c, nieuwe_letter)  
        
-       #alfabet omkeren
+  # alfabet omkeren
       omgekeerde_alfabet = [letter for letter in reversed(alfabet)]
       
-      #en weer terug
+  # en weer terug door de rotoren, maar nu de andere kant op
       nieuwe_letter = omgekeerde_alfabet[alfabet.index(nieuwe_letter)]
 
       nieuwe_letter = self.vorige_letter(self.c, nieuwe_letter)
@@ -83,7 +83,7 @@ class Enigma:
 
       nieuwe_letter = self.vorige_letter(self.a, nieuwe_letter)
 
-     #uiteindelijk komt er een nieuwe letter uit
+  # uiteindelijk komt er uit de rotoren een nieuwe letter 
       nieuwe_tekst.append(nieuwe_letter)
       
       self.rotors_draaien(positie)
@@ -91,7 +91,7 @@ class Enigma:
 
     return str.join("",nieuwe_tekst)
 
-     #code en rotorstanden invoeren
+  # code en rotorstanden invoeren
 print("Wat wil ontcijferen of versleutelen?")
 invoertekst = input()
 
