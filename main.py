@@ -40,4 +40,14 @@ class Enigma:
   def vorige_letter(self, rotor, char) :
     verschuifd_alfabet = self.schuiven_omkeren(rotor)
     letterIndex = alfabet.index(char)
-    return verschuifd_alfabet[letterIndex] 
+    return verschuifd_alfabet[letterIndex]
+     
+# rotors b en c gaan draaien op het juiste moment
+  def rotors_draaien(self, positie) :
+    self.a = self.a + 1
+
+    if(positie % 26 == 0):
+      self.b = self.b + 1
+
+    if(positie % (26*26)==0):     
+      self.c = self.c + 1
