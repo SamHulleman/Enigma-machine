@@ -65,7 +65,6 @@ class Enigma:
         continue
         
          #door de rotoren heen
-
       nieuwe_letter = self.volgende_letter(self.a, char)
 
       nieuwe_letter = self.volgende_letter(self.b, nieuwe_letter)  
@@ -91,3 +90,17 @@ class Enigma:
       positie = positie + 1
 
     return str.join("",nieuwe_tekst)
+
+     #code en rotorstanden invoeren
+print("Wat wil ontcijferen of versleutelen?")
+invoertekst = input()
+
+a = int(input("Rotorstand 1: "))
+b = int(input("Rotorstand 2: "))
+c = int(input("Rotorstand 3: "))
+
+e = Enigma(a, b, c)
+versleuteld = e.versleutelen(invoertekst)
+
+print("Ontcijferd/Versleuteld:")
+print(versleuteld)
