@@ -1,6 +1,6 @@
 # maak hier de hele enigma machine in python :D
 
-alphabet = "abcdefghijklmnopqrstuvwxyz"
+alfabet = "abcdefghijklmnopqrstuvwxyz"
 
 class Enigma:
   a = 0
@@ -83,7 +83,7 @@ class Enigma:
 
       nieuwe_letter = self.vorige_letter(self.a, nieuwe_letter)
 
-          #uiteindelijk komt er een nieuwe letter uit
+     #uiteindelijk komt er een nieuwe letter uit
       nieuwe_tekst.append(nieuwe_letter)
       
       self.rotors_draaien(positie)
