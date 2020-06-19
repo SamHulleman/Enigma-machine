@@ -51,3 +51,16 @@ class Enigma:
 
     if(positie % (26*26)==0):     
       self.c = self.c + 1
+
+      #instellingen voor de in te voeren tekst
+  def versleutelen(self, tekst) :
+    tekst = tekst.lower()      
+    nieuwe_tekst = []
+    positie = 0
+
+  # andere tekens dan letters mogelijk maken
+    for char in list(tekst) :
+      if not char in alfabet :
+        nieuwe_tekst.append(char)
+        continue
+   
