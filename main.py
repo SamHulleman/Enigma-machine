@@ -83,3 +83,11 @@ class Enigma:
       nieuwe_letter = self.vorige_letter(self.b, nieuwe_letter)
 
       nieuwe_letter = self.vorige_letter(self.a, nieuwe_letter)
+
+          #uiteindelijk komt er een nieuwe letter uit
+      nieuwe_tekst.append(nieuwe_letter)
+      
+      self.rotors_draaien(positie)
+      positie = positie + 1
+
+    return str.join("",nieuwe_tekst)
