@@ -63,4 +63,11 @@ class Enigma:
       if not char in alfabet :
         nieuwe_tekst.append(char)
         continue
-   
+        
+         #door de rotoren heen
+
+      nieuwe_letter = self.volgende_letter(self.a, char)
+
+      nieuwe_letter = self.volgende_letter(self.b, nieuwe_letter)  
+
+      nieuwe_letter = self.volgende_letter(self.c, nieuwe_letter)  
