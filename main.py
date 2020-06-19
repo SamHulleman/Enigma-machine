@@ -71,3 +71,15 @@ class Enigma:
       nieuwe_letter = self.volgende_letter(self.b, nieuwe_letter)  
 
       nieuwe_letter = self.volgende_letter(self.c, nieuwe_letter)  
+       
+       #alfabet omkeren
+      omgekeerde_alfabet = [letter for letter in reversed(alfabet)]
+      
+      #en weer terug
+      nieuwe_letter = omgekeerde_alfabet[alfabet.index(nieuwe_letter)]
+
+      nieuwe_letter = self.vorige_letter(self.c, nieuwe_letter)
+
+      nieuwe_letter = self.vorige_letter(self.b, nieuwe_letter)
+
+      nieuwe_letter = self.vorige_letter(self.a, nieuwe_letter)
