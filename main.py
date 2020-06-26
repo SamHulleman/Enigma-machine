@@ -1,7 +1,7 @@
 # maak hier de hele enigma machine in python :D
-from string import ascii_lowercase
 
-alfabet = "abcdefghijklmnopqrstuvwxyzäöïëü"
+# extern alfabet geïmporteert voor speciale letters (met bijvoorbeeld trema's)
+from string import ascii_lowercase
 
 class Enigma:
   a = 0
@@ -34,13 +34,13 @@ class Enigma:
    # zet de letters naar voor en verandert de positie van de aangegeven letter (encrypten)
   def volgende_letter(self, rotor, char) :
     verschuifd_alfabet = self.schuiven(rotor)
-    letterIndex = alfabet.index(char)
+    letterIndex = ascii_lowercase.index(char)
     return verschuifd_alfabet[letterIndex] 
 
   # zet de letters naar achter en verandert de positie van de aangegeven letter (decrypten)
   def vorige_letter(self, rotor, char) :
     verschuifd_alfabet = self.schuiven_omkeren(rotor)
-    letterIndex = alfabet.index(char)
+    letterIndex = ascii_lowercase.index(char)
     return verschuifd_alfabet[letterIndex]
      
   # rotors b en c gaan draaien op het juiste moment
