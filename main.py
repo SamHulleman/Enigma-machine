@@ -1,6 +1,7 @@
 # maak hier de hele enigma machine in python :D
+from string import ascii_lowercase
 
-alfabet = "abcdefghijklmnopqrstuvwxyz"
+alfabet = "abcdefghijklmnopqrstuvwxyzäöïëü"
 
 class Enigma:
   a = 0
@@ -16,7 +17,7 @@ class Enigma:
   # schuif letters op voor het gegeven aantal (encrypten)
   def schuiven(self, aantal_verschuivingen):    
     aantal_verschuivingen = aantal_verschuivingen % 26 
-    verschuifd_alfabet = list(alfabet)
+    verschuifd_alfabet = list(ascii_lowercase)
     for i in range(aantal_verschuivingen):
       verschuifd_alfabet.insert(0, verschuifd_alfabet[-1])
       verschuifd_alfabet.pop(-1)
@@ -24,7 +25,7 @@ class Enigma:
 
   # schuif de letters terug voor het gegeven aantal (decrypten)
   def schuiven_omkeren(self, aantal_verschuivingen):
-    verschuifd_alfabet = list(alfabet)
+    verschuifd_alfabet = list(ascii_lowercase)
     for i in range(aantal_verschuivingen):
         verschuifd_alfabet.append(verschuifd_alfabet[0])
         verschuifd_alfabet.pop(0)
@@ -60,7 +61,7 @@ class Enigma:
 
   # andere tekens dan letters mogelijk maken
     for char in list(tekst) :
-      if not char in alfabet :
+      if not char in ascii_lowercase :
         nieuwe_tekst.append(char)
         continue
         
@@ -72,10 +73,10 @@ class Enigma:
       nieuwe_letter = self.volgende_letter(self.c, nieuwe_letter)  
        
   # alfabet omkeren
-      omgekeerde_alfabet = [letter for letter in reversed(alfabet)]
+      omgekeerde_alfabet = [letter for letter in reversed(ascii_lowercase)]
       
   # en weer terug door de rotoren, maar nu de andere kant op
-      nieuwe_letter = omgekeerde_alfabet[alfabet.index(nieuwe_letter)]
+      nieuwe_letter = omgekeerde_alfabet[ascii_lowercase.index(nieuwe_letter)]
 
       nieuwe_letter = self.vorige_letter(self.c, nieuwe_letter)
 
